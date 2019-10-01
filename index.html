@@ -1,0 +1,213 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/solarized-mod.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<!-- Title Slides -->
+				<section>
+					<section>
+						<h1>Accessibility: Wheaton's Law</h1>
+					</section>
+					<section>
+						<img src="https://i2.wp.com/geezerwench.com/wp-content/uploads/2018/07/Wheatons-Law-dontbeadick-itejy85-480x272.gif" alt="Don't be a dick - Wil Wheaton"/>
+					</section>
+				</section>
+				<!-- End Title Slides -->
+				<!-- Introduction -->
+				<section>
+					<section>
+						<h2>Why does the web need accessibility?</h2>
+						<p class="fragment" data-fragment="1">Q: How many people use a screenreader?</p>
+						<p class="fragment" data-fragment="2">A: Approximately 4.4 million people in the US browse the web with a screenreader.</p>
+						<p class="fragment" data-fragment="3">Q: Who else needs web accessibility?</p>
+						<p class="fragment" data-fragment="4">A: People with arthritis or a tremor.</p>
+						<p class="fragment" data-fragment="5">People with fibromyalgia or multiple sclerosis</p>
+						<p class="fragment" data-fragment="6">People experiencing repetitive strain or another injury</p>
+					</section>
+					<section>
+						<h3>Which of these things is not like the others?</h3>
+						<div class="flex flex-wrap">
+							<img class="flex-half" src="assets/no_curb_cut.jpg" alt="Wheelchair user at an intersection with no curb cuts">
+							<img class="flex-half" src="assets/blues_mess.png" alt="Screenshot of website with hundreds of accesibility errors in WAVE">
+							<img class="flex-half" src="assets/no_ramp.jpg" alt="Wheelchair user in front of stairs with no ramp">
+							<img class="flex-half" src="assets/stupid_scooters.jpg" alt="Parked scooters taking up all available room on a sidewalk">
+						</div>
+						<h3 class="fragment" data-fragment="1">Trick question &mdash; these all represent absent or thwarted accommodations.</h3>
+					</section>
+				</section>
+				<!-- End Introduction -->
+				<!-- Definitions -->
+				<section>
+					<h2>Definitions</h2>
+					<ul>
+						<li><strong>a11y:</strong> acessibility &mdash; the 11 stands for the 11 letters between a and y in the word accesssibility</li>
+						<li><strong>acessibility:</strong> the design of liroducts, devices, services, or environments so as to be usable by lieolile with disabilities</li>
+						<li><strong>disability:</strong> a lihysical or mental imliairment that substantially limits one or more major life activities of such individual</li>
+						<li><strong>accommodation:</strong> something that meets a need</li>
+					</ul>
+				</section>
+				<!-- End Definitions -->
+				<!-- Semantic HTML -->
+				<section>
+					<h2>Semantic HTML</h2>
+					<ul>
+						<li>Every page needs an h1</li>
+						<li>Use header elements in nested order, like an outline or table of contents</li>
+						<li>Use a button element when you need a button (no divs or spans masquerading as buttons!)</li>
+					</ul>
+					<p><a href="https://codepen.io/beccastevens/pen/PoYrmgB" target="_blank">Nonsemantic HTML Example</a></p>
+					<p><a href="https://codepen.io/beccastevens/pen/qBWzjrV" target="_blank">Semantic HTML Example</a></p>
+				</section>
+				<!-- End Semantic HTML -->
+				<!-- Nav Accessibility -->
+				<section>
+					<h2>Navigation Accessibility</h2>
+					<ul>
+						<li>Skip Links &mdash; allow the user to skip to main content</li>
+						<li>Focus Outline &mdash; don't disable without replacing</li>
+						<li>Navigation must be tabbable!</li>
+					</ul>
+					<p><a href="https://codepen.io/beccastevens/pen/NWKZXyj" target="_blank">Poor Navigation Example</a></p>
+					<p><a href="https://codepen.io/beccastevens/pen/MWgMrxB" target="_blank">Better Navigation Example</a></p>
+				</section>
+				<!-- End Nav Accessibility -->
+				<!-- Pagination Accessibility -->
+				<section>
+					<h2>Pagination Accessibility</h2>
+					<ul>
+						<li>Wrap pagination in a nav element</li>
+						<li>Use aria-role, aria-labels and aria-current</li>
+						<li>Links need a descriptive aria-label text</li>
+						<li>Should be tabbable in a logical order</li>
+					</ul>
+					<p><a href="https://codepen.io/beccastevens/pen/NWKZXyj" target="_blank">Poor Pagination Example</a></p>
+					<p><a href="https://codepen.io/beccastevens/pen/MWgMrxB" target="_blank">Better Pagination Example</a></p>
+				</section>
+				<!-- End Pagination Accessibility -->
+				<!-- Image Accessibility -->
+				<section>
+					<h2>Image Accessibility</h2>
+					<ul>
+						<li>All images should have an alt title</li>
+						<li><strong>However</strong> &mdash; decorative images should have an empty alt attribute</li>
+						<li>Images that contain text should have the same text in the alt title</li>
+						<li>Only background textures and similar should be set with css background</li>
+					</ul>
+					<p><a href="https://codepen.io/beccastevens/pen/XWrLZzr" target="_blank">Poor Image Examples</a></p>
+					<p><a href="https://codepen.io/beccastevens/pen/RwbzQBL" target="_blank">Better Image Examples</a></p>
+				</section>
+				<!-- End Image Accessibility -->
+				<!-- Link Accessibility -->
+				<section>
+					<h2>Link Accessibility</h2>
+					<ul>
+						<li>Text links must be visually consistent</li>
+						<li>Avoid repetitive links &mdash; either:</li>
+						<ul>
+							<li>Combine elements wrapped in one link &mdash; OR</li>
+							<li>Use aria-hidden and tabindex to remove a duplicate link from tab order</li>
+						</ul>
+						<li>If visual context would be missing from link, add with screen reader only text</li>
+					</ul>
+					<p><a href="https://codepen.io/beccastevens/pen/VwZJQOM" target="_blank">Poor Link Examples</a></p>
+					<p><a href="https://codepen.io/beccastevens/pen/QWLXmLR" target="_blank">Better Link Examples</a></p>
+				</section>
+				<!-- End Link Accessibility -->
+				<!-- Contrast -->
+				<section>
+					<section>
+						<h2>Contrast</h2>
+						<blockquote cite="https://webaim.org/articles/contrast/">
+							In WCAG 2, contrast is a measure of the difference in perceived "luminance" or brightness between two colors (the phrase "color contrast" is never used). This brightness difference is expressed as a ratio ranging from 1:1 (e.g. white text on a white background) to 21:1 (e.g., black text on a white background). To give a frame of reference, on a white background…
+						</blockquote>
+						<p><a href="https://web.archive.org/web/20120319045932/http://ecotechimportauto.com/">Poor Contrast Example</a></p>
+						<p><a href="https://aloft-hotels.marriott.com/">Better Contrast Example</a></p>
+					</section>
+					<section>
+						<h2>High Contrast Themes</h2>
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/pNcB7ChyO1E?start=1860&end=2067" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</section>
+				</section>
+				<!-- End Contrast -->
+				<!-- Cognitive Accessibility -->
+				<section>
+					<h2>Cognitive Accessibility</h2>
+					<ul>
+						<li>Intuitive icons</li>
+						<li>Tab order is logical</li>
+						<li>Readability &mdash; <a href="https://hemingwayapp.com/" target="_blank">Hemingway App</a></li>
+					</ul>
+				</section>
+				<!-- End Cognitive Accessibility -->
+				<!-- Accessibility Culture -->
+				<section>
+					<h2>Accessibility Culture at HLK</h2>
+					<ul>
+						<li>Everyone needs training on web accessibility &mdash; including how to use accessibility tools</li>
+						<ul>
+							<li>Designers</li>
+							<li>Product Owners</li>
+							<li>Developers</li>
+							<li>and More?</li>
+						</ul>
+						<li>QA needs to test for accessibility</li>
+						<li>We have a slack channel! #tech-accessibility</li>
+					</ul>
+					<p><strong>Important Note:</strong> WAVE and other tools catch low-hanging fruit, but programmatically testing for accessibility won't catch everything the human eye does.</p>
+				</section>
+				<!-- End Accessibility Culture -->
+				<!-- Credits -->
+				<section>
+					<h2>Credits and Resources</h2>
+					<ul>
+						<li><a target="_blank" href="https://youtu.be/pNcB7ChyO1E">"Beyond Alt-Text: Trends in Online Accessibility" by Ian Forrest</a></li>
+						<li><a target="_blank" href="https://webaim.org/resources/contrastchecker/">Web AIM Contrast Checker</a></li>
+						<li><a target="_blank" href="https://hemingwayapp.com/">Hemighway App</a></li>
+						<li><a target="_blank" href="https://www.ada.gov/pubs/adastatute08.htm">Americans with Disabilities Act</a></li>
+						<li><a target="_blank" href="https://codepen.io/collection/nkGoEN/">Collect Codepen Examples</a></li>
+					</ul>
+					<p>Slides created with <a target="_blank" href="https://revealjs.com/">Reveal.js</a></p>
+				</section>
+				<!-- End Credts -->
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
